@@ -5,6 +5,7 @@ FIXME
 ## Prerequisites
 
 You will need [Leiningen][] 2.0.0 or above installed.
+You will need kafka 
 
 [leiningen]: https://github.com/technomancy/leiningen
 

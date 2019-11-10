@@ -1,7 +1,7 @@
-(ns clj-kafka-producer.handler-test
+(ns clj-kafka.handler-test
   (:require [clojure.test :refer :all]
             [ring.mock.request :as mock]
-            [clj-kafka-producer.handler :refer :all]))
+            [clj-kafka.handler :refer :all]))
 
 (deftest test-app
   (testing "main route"
