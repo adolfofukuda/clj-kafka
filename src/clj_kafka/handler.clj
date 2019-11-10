@@ -3,7 +3,6 @@
             [compojure.route :as route]
             [clj-kafka.admin :as admin]
             [clj-kafka.producer :as prod]            
-            [clj-kafka.consumer :as cons]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
 
 (defroutes app-routes
@@ -12,8 +11,9 @@
   (POST "/topic" request
     (admin/create-kafka-topic request))
   (POST "/topic/:topic" request   
-    (str (prod/async-send (:topic (:params request)) (str (java.util.UUID/randomUUID)) request)))
-  (GET "/topic/:topic" [topic] (str (cons/async-consumer topic)))
+    (str (prod/send-n-times "1"  (:topic (:params request)) request)))
+  (POST "/topic/:topic/:times" request
+    (str (prod/send-n-times (:times (:params request)) (:topic (:params request)) request)))
   (route/not-found "Not Found")
   )
 
