@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "753a9618-5d39-4a3c-ab3e-463f76b10d55",
+		"name": "kafka-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/topic",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"kafka-test\"\n}"
+				},
+				"url": "localhost:3000/topic"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/topics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:3000/topics"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/topic/kafka-test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"msg\": \"teste\" }"
+				},
+				"url": "localhost:3000/topic/kafka-test"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

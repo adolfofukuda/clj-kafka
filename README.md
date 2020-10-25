@@ -12,8 +12,10 @@ You will need kafka
 ## Running
 
 To start a web server for the application, run:
-
-    lein ring server
+    docker-compose up -d
+    lein ring server - para o producer
+    lein run para o consumer
+    postman collection
 
 ## License
 
